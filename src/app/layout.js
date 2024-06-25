@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@mui/material/styles';
+import { Analytics } from '@vercel/analytics/react';
 import theme from './theme';
 
 export const metadata = {
@@ -11,7 +12,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <ThemeProvider theme={theme}>
-          <>{children}</>
+          <>
+            {children}
+            <Analytics />
+          </>
         </ThemeProvider>
       </body>
     </html>
